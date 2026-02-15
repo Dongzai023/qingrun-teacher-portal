@@ -1,0 +1,209 @@
+/* Pages/profile/profile.wxss */
+.profile-header {
+  position: relative;
+  height: 512rpx;
+  overflow: hidden;
+}
+
+.header-bg {
+  width: 100%;
+  height: 100%;
+  filter: blur(8rpx);
+  opacity: 0.8;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, transparent, #f6f8f7);
+}
+
+.profile-content {
+  padding: 0 48rpx;
+  margin-top: -160rpx;
+  position: relative;
+  z-index: 10;
+}
+
+.profile-card {
+  border-radius: 64rpx;
+  padding: 48rpx;
+  text-align: center;
+  box-shadow: 0 40rpx 80rpx rgba(0, 0, 0, 0.08);
+}
+
+.avatar-large-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 32rpx;
+}
+
+.avatar-large {
+  width: 192rpx;
+  height: 192rpx;
+  border-radius: 50%;
+  border: 8rpx solid #ffffff;
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+
+.avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 64rpx;
+  height: 64rpx;
+  background-color: #11d45f;
+  border-radius: 50%;
+  border: 8rpx solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-user-small::before { content: "👤"; color: white; font-size: 24rpx; }
+
+.user-name-large {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.user-id {
+  font-size: 28rpx;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 8rpx;
+}
+
+.dept-tags {
+  display: flex;
+  justify-content: center;
+  gap: 24rpx;
+  margin-top: 32rpx;
+}
+
+.dept-tag {
+  padding: 8rpx 24rpx;
+  background-color: #f1f5f9;
+  border-radius: 16rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #475569;
+}
+
+.profile-stats-grid {
+  display: flex;
+  margin-top: 48rpx;
+  padding-top: 48rpx;
+  border-top: 2rpx solid #f1f5f9;
+}
+
+.stat-item {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.stat-label {
+  font-size: 20rpx;
+  font-weight: bold;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-top: 8rpx;
+}
+
+.menu-section {
+  margin-top: 64rpx;
+}
+
+.menu-group-title {
+  font-size: 20rpx;
+  font-weight: bold;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 4rpx;
+  padding: 0 16rpx;
+  margin-bottom: 32rpx;
+}
+
+.menu-box {
+  border-radius: 48rpx;
+  overflow: hidden;
+}
+
+.menu-item {
+  padding: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2rpx solid rgba(255, 255, 255, 0.5);
+}
+
+.menu-item.no-border {
+  border-bottom: none;
+}
+
+.menu-item-hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.menu-icon-bg {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon-bg.blue { background-color: #eff6ff; color: #3b82f6; }
+.menu-icon-bg.orange { background-color: #fff7ed; color: #f97316; }
+.menu-icon-bg.green { background-color: #f0fdf4; color: #11d45f; }
+.menu-icon-bg.purple { background-color: #faf5ff; color: #a855f7; }
+.menu-icon-bg.cyan { background-color: #ecfeff; color: #06b6d4; }
+
+.menu-text {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #334155;
+}
+
+.logout-btn {
+  margin-top: 64rpx;
+  padding: 32rpx;
+  background-color: #fef2f2;
+  border-radius: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  color: #ef4444;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.icon-logout-red::before { content: "↩"; font-size: 32rpx; }
+
+.version-text {
+  text-align: center;
+  font-size: 20rpx;
+  color: #94a3b8;
+  padding: 48rpx 0;
+}
+
+.icon-user-menu::before { content: "👤"; font-size: 28rpx; }
+.icon-bell-menu::before { content: "🔔"; font-size: 28rpx; }
+.icon-shield-menu::before { content: "🛡️"; font-size: 28rpx; }
+.icon-settings-menu::before { content: "⚙️"; font-size: 28rpx; }
+.icon-help-menu::before { content: "❓"; font-size: 28rpx; }
+.icon-chevron-right::after { content: "〉"; color: #cbd5e1; font-size: 28rpx; }

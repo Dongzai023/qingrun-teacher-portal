@@ -1,0 +1,111 @@
+<!-- pages/profile/profile.wxml -->
+<scroll-view scroll-y enable-flex class="container hide-scrollbar" style="padding-bottom: 260rpx;">
+  <view class="profile-header">
+    <image src="{{assets.bg_campus}}" mode="aspectFill" class="header-bg" />
+    <view class="header-overlay"></view>
+  </view>
+
+  <view class="profile-content">
+    <!-- Profile Card -->
+    <view class="glass-card profile-card">
+      <view class="avatar-large-wrapper">
+        <image src="{{assets.avatar_main}}" class="avatar-large" />
+        <view class="avatar-badge">
+          <view class="icon-user-small"></view>
+        </view>
+      </view>
+      
+      <view class="user-name-large">树苗哥哥</view>
+      <view class="user-id">T09283 · 高级教师</view>
+      
+      <view class="dept-tags">
+        <text class="dept-tag">技术组</text>
+        <text class="dept-tag">教研室</text>
+      </view>
+
+      <view class="profile-stats-grid">
+        <view class="stat-item" bindtap="goToProgress">
+          <view class="stat-value">4</view>
+          <view class="stat-label">审批中</view>
+        </view>
+        <view class="stat-item">
+          <view class="stat-value">12</view>
+          <view class="stat-label">剩余年假</view>
+        </view>
+        <view class="stat-item">
+          <view class="stat-value">0</view>
+          <view class="stat-label">本月迟到</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Menus -->
+    <view class="menu-section">
+      <view class="menu-group-title">账户设置</view>
+      <view class="glass-panel menu-box">
+        <view class="menu-item" hover-class="menu-item-hover">
+          <view class="menu-item-left">
+            <view class="menu-icon-bg blue">
+              <view class="icon-user-menu"></view>
+            </view>
+            <text class="menu-text">个人信息</text>
+          </view>
+          <view class="icon-chevron-right"></view>
+        </view>
+        <view class="menu-item" hover-class="menu-item-hover">
+          <view class="menu-item-left">
+            <view class="menu-icon-bg orange">
+              <view class="icon-bell-menu"></view>
+            </view>
+            <text class="menu-text">通知设置</text>
+          </view>
+          <view class="icon-chevron-right"></view>
+        </view>
+        <view class="menu-item no-border" hover-class="menu-item-hover">
+          <view class="menu-item-left">
+            <view class="menu-icon-bg green">
+              <view class="icon-shield-menu"></view>
+            </view>
+            <text class="menu-text">账号安全</text>
+          </view>
+          <view class="icon-chevron-right"></view>
+        </view>
+      </view>
+
+      <view class="menu-group-title mt-6">更多</view>
+      <view class="glass-panel menu-box">
+        <view class="menu-item" hover-class="menu-item-hover">
+          <view class="menu-item-left">
+            <view class="menu-icon-bg purple">
+              <view class="icon-settings-menu"></view>
+            </view>
+            <text class="menu-text">系统通用</text>
+          </view>
+          <view class="icon-chevron-right"></view>
+        </view>
+        <view class="menu-item no-border" hover-class="menu-item-hover">
+          <view class="menu-item-left">
+            <view class="menu-icon-bg cyan">
+              <view class="icon-help-menu"></view>
+            </view>
+            <text class="menu-text">帮助与反馈</text>
+          </view>
+          <view class="icon-chevron-right"></view>
+        </view>
+      </view>
+
+      <view class="logout-btn" bindtap="handleLogout">
+        <view class="icon-logout-red"></view>
+        <text>退出登录</text>
+      </view>
+
+      <!-- Footer Info -->
+      <view class="footer-info">
+        <view class="footer-text">清涧中学 陕ICP备2025060483</view>
+        <view class="footer-text">Copyright © 2024-2025 TD.All Rights Reserved.</view>
+      </view>
+
+      <view class="version-text">Version 2.4.0 (Build 20250403)</view>
+    </view>
+  </view>
+</scroll-view>

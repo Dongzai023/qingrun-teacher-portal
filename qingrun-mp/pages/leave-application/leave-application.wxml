@@ -1,0 +1,124 @@
+<!-- pages/leave-application/leave-application.wxml -->
+<view class="container bg-light min-h-screen">
+  <!-- Header -->
+  <view class="header" style="padding-top: {{statusBarHeight}}px;">
+    <view class="header-content">
+      <view class="back-btn" bindtap="goBack">
+        <view class="icon-arrow-left"></view>
+      </view>
+      <text class="title">请假申请</text>
+      <view class="placeholder-div"></view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y enable-flex class="scroll-content">
+    <view class="glass-panel form-card">
+      <!-- Leave Type -->
+      <view class="form-item">
+        <view class="form-label">请假类型</view>
+        <view class="type-grid">
+          <view 
+            class="type-btn {{leaveType === 'sick' ? 'active' : ''}}" 
+            bindtap="setLeaveType" data-type="sick"
+          >病假</view>
+          <view 
+            class="type-btn {{leaveType === 'casual' ? 'active' : ''}}" 
+            bindtap="setLeaveType" data-type="casual"
+          >事假</view>
+          <view 
+            class="type-btn {{leaveType === 'public' ? 'active' : ''}}" 
+            bindtap="setLeaveType" data-type="public"
+          >公假</view>
+        </view>
+      </view>
+
+      <!-- Time Selection -->
+      <view class="form-item mt-6">
+        <view class="form-label">开始时间</view>
+        <view class="time-picker-row">
+          <picker mode="date" value="{{startDate}}" bindchange="onStartDateChange" class="picker-flex">
+            <view class="time-box">
+              <view class="icon-calendar-primary"></view>
+              <text class="time-text">{{startDate}}</text>
+            </view>
+          </picker>
+          <picker mode="time" value="{{startTime}}" bindchange="onStartTimeChange" class="picker-small">
+            <view class="time-box">
+              <view class="icon-clock-primary"></view>
+              <text class="time-text">{{startTime}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="form-item mt-4">
+        <view class="form-label">结束时间</view>
+        <view class="time-picker-row">
+          <picker mode="date" value="{{endDate}}" bindchange="onEndDateChange" class="picker-flex">
+            <view class="time-box">
+              <view class="icon-calendar-grey"></view>
+              <text class="time-text">{{endDate}}</text>
+            </view>
+          </picker>
+          <picker mode="time" value="{{endTime}}" bindchange="onEndTimeChange" class="picker-small">
+            <view class="time-box">
+              <view class="icon-clock-grey"></view>
+              <text class="time-text">{{endTime}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="duration-badge">
+        <text class="duration-label">共计时长</text>
+        <text class="duration-value">8.0 小时</text>
+      </view>
+
+      <!-- Reason -->
+      <view class="form-item mt-6">
+        <view class="form-label">请假事由</view>
+        <textarea 
+          class="reason-textarea" 
+          placeholder="请详细描述请假原因..." 
+          placeholder-class="placeholder"
+          bindinput="onReasonInput"
+          value="{{reason}}"
+        ></textarea>
+      </view>
+
+      <!-- Attachment -->
+      <view class="form-item mt-6">
+        <view class="form-label">附件 (选填)</view>
+        <view class="upload-btn" bindtap="uploadFile">
+          <view class="icon-paperclip"></view>
+          <text class="upload-text">点击上传图片/证明</text>
+        </view>
+      </view>
+
+      <!-- Approver -->
+      <view class="form-item mt-6">
+        <view class="form-label">审批人</view>
+        <view class="approver-list">
+          <view class="approver-item">
+            <image src="https://i.pravatar.cc/100?img=11" class="approver-avatar" />
+            <text class="approver-name">王主任</text>
+            <text class="approver-dept">教务处</text>
+          </view>
+          <view class="icon-chevron-right-grey"></view>
+          <view class="add-approver">
+            <view class="add-icon">+</view>
+            <text class="add-text">添加</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- Submit Button -->
+  <view class="footer">
+    <button class="submit-btn" bindtap="submitForm">
+      <view class="icon-check-white"></view>
+      <text>提交申请</text>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120rpx;
+  background: white;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 1000;
+  border-radius: 48rpx 48rpx 0 0;
+  box-shadow: 0 -4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-icon {
+  width: 48rpx;
+  height: 48rpx;
+  color: #94a3b8;
+}
+
+.tab-icon.active {
+  color: #11d45f;
+}
+
+.tab-text {
+  font-size: 20rpx;
+  font-weight: bold;
+  color: #94a3b8;
+  margin-top: 4rpx;
+}
+
+.tab-text.active {
+  color: #11d45f;
+}
+
+.center-item {
+  position: relative;
+}
+
+.center-btn {
+  position: absolute;
+  top: -60rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #11d45f;
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16rpx 32rpx rgba(17, 212, 95, 0.3);
+  border: 8rpx solid #ffffff;
+}
+
+.icon-home::before { content: "🏠"; font-size: 40rpx; }
+.icon-stats::before { content: "📊"; font-size: 40rpx; }
+.icon-scan::before { content: "➕"; color: white; font-size: 48rpx; }
+.icon-bell::before { content: "🔔"; font-size: 40rpx; }
+.icon-user::before { content: "👤"; font-size: 40rpx; }
+
+.tab-icon.active .icon-home::before,
+.tab-icon.active .icon-stats::before,
+.tab-icon.active .icon-user::before {
+  filter: hue-rotate(90deg); /* hacky way to change color for emoji if needed, or just use real icons */
+}

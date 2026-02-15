@@ -1,0 +1,37 @@
+<view class="tab-bar glass-panel">
+  <view class="tab-bar-border"></view>
+  
+  <view class="tab-bar-item" data-path="/pages/home/home" data-index="0" bindtap="switchTab">
+    <view class="tab-icon {{selected === 0 ? 'active' : ''}}">
+      <view class="icon-home"></view>
+    </view>
+    <view class="tab-text {{selected === 0 ? 'active' : ''}}">首页</view>
+  </view>
+
+  <view class="tab-bar-item" data-path="/pages/stats/stats" data-index="1" bindtap="switchTab">
+    <view class="tab-icon {{selected === 1 ? 'active' : ''}}">
+      <view class="icon-stats"></view>
+    </view>
+    <view class="tab-text {{selected === 1 ? 'active' : ''}}">统计</view>
+  </view>
+
+  <view class="tab-bar-item center-item">
+    <view class="center-btn" bindtap="handleCenterBtn">
+      <view class="icon-scan"></view>
+    </view>
+  </view>
+
+  <view class="tab-bar-item">
+    <view class="tab-icon">
+      <view class="icon-bell"></view>
+    </view>
+    <view class="tab-text">消息</view>
+  </view>
+
+  <view class="tab-bar-item" data-path="/pages/profile/profile" data-index="2" bindtap="switchTab">
+    <view class="tab-icon {{selected === 2 ? 'active' : ''}}">
+      <view class="icon-user"></view>
+    </view>
+    <view class="tab-text {{selected === 2 ? 'active' : ''}}">个人中心</view>
+  </view>
+</view>

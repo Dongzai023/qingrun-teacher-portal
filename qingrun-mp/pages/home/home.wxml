@@ -1,0 +1,145 @@
+<!-- pages/home/home.wxml -->
+<scroll-view scroll-y enable-flex class="container hide-scrollbar" style="padding-bottom: 240rpx;">
+  <!-- Custom Navigation Bar -->
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-content">
+      <view class="nav-title">清涧中学教师签到系统</view>
+    </view>
+  </view>
+
+  <!-- Hero Header -->
+  <view class="hero-header">
+    <image src="{{assets.bg_campus}}" mode="aspectFill" class="hero-image" />
+    <view class="hero-overlay"></view>
+    <view class="hero-text">
+      <view class="welcome">欢迎回来，</view>
+      <view class="slogan">美好的一天从这里开始</view>
+    </view>
+  </view>
+
+  <!-- User Card -->
+  <view class="user-card-wrapper">
+    <view class="glass-panel user-card">
+      <view class="avatar-wrapper">
+        <image src="{{assets.avatar_main}}" class="avatar" />
+        <view class="rank-tag">TOP 24</view>
+      </view>
+      <view class="user-info">
+        <view class="user-name">树苗哥哥</view>
+        <view class="user-dept">张晓东 · 技术组</view>
+        <view class="tags">
+          <text class="tag green">在职</text>
+          <text class="tag blue">教师</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Check-in Cards -->
+  <view class="section-title-wrapper">
+    <view class="section-title">今日签到</view>
+    <text class="section-badge">4个时段</text>
+  </view>
+
+  <scroll-view scroll-x class="checkin-scroller hide-scrollbar">
+    <view class="checkin-list">
+      <!-- Card 1: Missed -->
+      <view class="checkin-card missed">
+        <view class="card-icon-wrapper red">
+          <view class="icon-x"></view>
+        </view>
+        <view class="card-info">
+          <view class="time-label">早间</view>
+          <view class="time-value">06:30</view>
+          <view class="time-range">~ 08:59</view>
+          <view class="status-btn red">未签</view>
+        </view>
+      </view>
+
+      <!-- Card 2: Checked -->
+      <view class="checkin-card active">
+        <view class="card-icon-wrapper white">
+          <view class="icon-check-green"></view>
+        </view>
+        <view class="card-info">
+          <view class="time-label white">上午</view>
+          <view class="time-value white">09:00</view>
+          <view class="time-range white">~ 12:00</view>
+          <view class="status-btn white">已签</view>
+        </view>
+      </view>
+
+      <!-- Card 3: Pending -->
+      <view class="checkin-card pending">
+        <view class="card-icon-wrapper grey">
+          <view class="icon-clock"></view>
+        </view>
+        <view class="card-info">
+          <view class="time-label">下午</view>
+          <view class="time-value">13:30</view>
+          <view class="time-range">~ 16:20</view>
+          <view class="status-btn grey">待签</view>
+        </view>
+      </view>
+
+      <!-- Card 4: Evening -->
+      <view class="checkin-card pending">
+        <view class="card-icon-wrapper grey">
+          <view class="icon-moon"></view>
+        </view>
+        <view class="card-info">
+          <view class="time-label">晚间</view>
+          <view class="time-value">16:21</view>
+          <view class="time-range">~ 21:20</view>
+          <view class="status-btn grey">待签</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- Main Check-in Button area -->
+  <view class="checkin-main">
+    <view class="time-display">
+      <view class="time-label-small">Current Time</view>
+      <view class="time-now">
+        11:42<text class="time-sec">:39</text>
+      </view>
+      <view class="date-badge">
+        <view class="pulse-dot"></view>
+        <text>2025/04/03 · 周四</text>
+      </view>
+    </view>
+
+    <view class="pulse-button-wrapper" bindtap="onCheckIn">
+      <view class="pulse-ring animate-ping"></view>
+      <view class="pulse-ring-dash animate-rotate"></view>
+      <view class="main-button">
+        <view class="btn-icon-wrapper">
+          <view class="icon-fingerprint"></view>
+        </view>
+        <view class="btn-text">签到</view>
+        <view class="btn-subtext">Tap to Check-in</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Stats entry -->
+  <view class="actions-section">
+    <view class="action-card" bindtap="goToStats">
+      <view class="action-icon-bg blue">
+        <view class="icon-chart"></view>
+      </view>
+      <view class="action-content">
+        <view class="action-title">数据统计</view>
+        <view class="action-desc">查看历史考勤记录与异常</view>
+      </view>
+      <view class="icon-chevron-right"></view>
+    </view>
+  </view>
+
+  <!-- Footer Info -->
+  <view class="footer-info">
+    <view class="footer-text">清涧中学 陕ICP备2025060483</view>
+    <view class="footer-text">Copyright © 2024-2025 TD.All Rights Reserved.</view>
+  </view>
+</scroll-view>

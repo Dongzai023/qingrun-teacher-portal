@@ -1,0 +1,115 @@
+<!-- pages/stats/stats.wxml -->
+<scroll-view scroll-y enable-flex class="container hide-scrollbar" style="padding-bottom: 260rpx;">
+  <view class="stats-header">
+    <view class="header-left">
+      <view class="icon-chart-bg">
+        <view class="icon-stats-primary"></view>
+      </view>
+      <text class="page-title">记录统计</text>
+    </view>
+    <view class="glass-panel calendar-btn">
+      <view class="icon-calendar"></view>
+    </view>
+  </view>
+
+  <!-- Main Stats Card -->
+  <view class="glass-card main-stats-card">
+    <view class="blur-dot"></view>
+    <view class="stats-content">
+      <view class="stats-label">本月出勤率</view>
+      
+      <view class="progress-ring-wrapper">
+        <!-- Simplified Ring Chart using CSS -->
+        <view class="progress-ring">
+          <view class="progress-ring-inner">
+            <text class="progress-value">{{stats.attendance_rate}}<text class="unit">%</text></text>
+            <view class="rank-badge">
+              <view class="icon-award"></view>
+              <text>前 1%</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="stats-grid">
+        <view class="grid-item">
+          <view class="grid-label">正常</view>
+          <view class="grid-value">{{stats.attended_days}}</view>
+        </view>
+        <view class="grid-item border-l">
+          <view class="grid-label">迟到</view>
+          <view class="grid-value">0</view>
+        </view>
+        <view class="grid-item border-l">
+          <view class="grid-label">缺勤</view>
+          <view class="grid-value">{{stats.total_days - stats.attended_days}}</view>
+        </view>
+        <view class="grid-item border-l">
+          <view class="grid-label">请假</view>
+          <view class="grid-value">0</view>
+        </view>
+      </view>
+
+      <button class="apply-leave-btn" bindtap="goToLeaveApplication">
+        <text>申请请假</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- Weekly Overview -->
+  <view class="section-wrapper">
+    <view class="section-header">
+      <text class="section-subtitle">周概览</text>
+      <text class="section-trend">较上周 +2.4%</text>
+    </view>
+    <view class="glass-card weekly-card">
+      <view class="bar-chart">
+        <view class="bar-item" wx:for="{{weeklyData}}" wx:key="day">
+          <view class="bar-bg {{item.isWeekend ? 'weekend' : ''}}">
+            <view class="bar-fill {{item.isWeekend ? 'weekend' : ''}}" style="height: {{item.height}}"></view>
+          </view>
+          <text class="bar-label">{{item.day}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- History List -->
+  <view class="section-wrapper mt-8">
+    <view class="section-header">
+      <text class="section-title">历史记录</text>
+      <text class="section-date">2023年10月</text>
+    </view>
+
+    <view class="history-list">
+      <view class="glass-panel history-item" wx:for="{{historyData}}" wx:key="id">
+        <view class="history-left">
+          <view class="date-box {{item.isException ? 'red' : ''}}">
+            <text class="month">{{item.month}}月</text>
+            <text class="day">{{item.day}}</text>
+          </view>
+          <view class="history-info">
+            <view class="time-row">
+              <view class="time-item">
+                <view class="icon-login"></view>
+                <text class="time-text {{item.isLate ? 'red' : ''}}">{{item.loginTime}}</text>
+              </view>
+              <view class="time-item ml-4">
+                <view class="icon-logout"></view>
+                <text class="time-text">{{item.logoutTime}}</text>
+              </view>
+            </view>
+            <view class="location-text">{{item.location}}</view>
+          </view>
+        </view>
+        <view class="status-tag {{item.statusClass}}">{{item.status}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Footer Info -->
+  <view class="footer-info">
+    <view class="footer-text">清涧中学 陕ICP备2025060483</view>
+    <view class="footer-text">Copyright © 2024-2025 TD.All Rights Reserved.</view>
+  </view>
+</scroll-view>

@@ -1,0 +1,116 @@
+<!-- pages/leave-progress/leave-progress.wxml -->
+<view class="container bg-light min-h-screen">
+  <!-- Header -->
+  <view class="header" style="padding-top: {{statusBarHeight}}px;">
+    <view class="header-content">
+      <view class="back-btn" bindtap="goBack">
+        <view class="icon-arrow-left"></view>
+      </view>
+      <text class="title">审批进度</text>
+      <view class="more-btn">
+        <view class="icon-more"></view>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y enable-flex class="scroll-content">
+    <!-- Status Card -->
+    <view class="status-card">
+      <view class="blur-dot-orange"></view>
+      <view class="status-card-inner">
+        <view class="status-header">
+          <view class="icon-clock-white-large"></view>
+          <text class="status-title">审批中</text>
+        </view>
+        <view class="status-desc">您的病假申请正在等待 [教务处] 审批，预计将在 24 小时内完成。</view>
+        <view class="progress-bar-bg">
+          <view class="progress-bar-fill"></view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Details Card -->
+    <view class="glass-panel details-card">
+      <view class="details-header">
+        <view class="icon-file-text-primary"></view>
+        <text>申请详情</text>
+      </view>
+      <view class="details-list">
+        <view class="details-item">
+          <text class="details-label">请假类型</text>
+          <text class="details-value">病假</text>
+        </view>
+        <view class="details-item">
+          <text class="details-label">开始时间</text>
+          <text class="details-value">2025/04/05 09:00</text>
+        </view>
+        <view class="details-item">
+          <text class="details-label">结束时间</text>
+          <text class="details-value">2025/04/05 18:00</text>
+        </view>
+        <view class="details-item">
+          <text class="details-label">共计时长</text>
+          <text class="details-value">8小时</text>
+        </view>
+        <view class="reason-section">
+          <text class="reason-label">请假事由</text>
+          <view class="reason-box">
+             因重感冒发烧需去医院挂水，特申请病假一天。工作已交接给李老师。
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Timeline -->
+    <view class="timeline-section">
+      <view class="section-title">审批流程</view>
+      <view class="timeline">
+        <view class="timeline-line"></view>
+        
+        <!-- Step 1 -->
+        <view class="timeline-item">
+          <view class="timeline-dot active">
+            <view class="icon-check-mini"></view>
+          </view>
+          <view class="timeline-content">
+            <view class="timeline-header">
+              <text class="timeline-title">发起申请</text>
+              <text class="timeline-time">04/03 14:20</text>
+            </view>
+            <view class="timeline-sub">树苗哥哥 (本人)</view>
+          </view>
+        </view>
+
+        <!-- Step 2 (Active) -->
+        <view class="timeline-item active">
+          <view class="timeline-dot orange">
+            <view class="icon-clock-mini"></view>
+          </view>
+          <view class="timeline-content-card">
+            <view class="approver-info">
+              <image src="https://i.pravatar.cc/100?img=11" class="approver-img" />
+              <view class="approver-text">
+                <view class="approver-name">王主任</view>
+                <view class="approver-label">教务处审批</view>
+              </view>
+            </view>
+            <view class="status-badge-orange">审批中</view>
+          </view>
+        </view>
+
+        <!-- Step 3 -->
+        <view class="timeline-item pending">
+          <view class="timeline-dot grey"></view>
+          <view class="timeline-content">
+            <view class="timeline-header">
+              <text class="timeline-title">抄送</text>
+            </view>
+            <view class="timeline-sub">人事部</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <button class="revoke-btn" bindtap="revokeApplication">撤销申请</button>
+  </scroll-view>
+</view>

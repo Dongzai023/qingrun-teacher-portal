@@ -1,0 +1,16 @@
+App({
+  globalData: {
+    userInfo: null,
+    assets: {
+      bg_campus: "https://lh3.googleusercontent.com/aida-public/AB6AXuCUrnQ-9zJWYmhYMH_0w2vRFZOpEMsJO9jnmOMg1Z5BixJnzIQGF1qqqJyLdNtArPy0M6rdbs3tuFRIWO0ugvZurkJTVY6olDopWOYo725rrZYa6CA6CEKs5d8L9AQznRZ7eMaf20abj3OfuZ82MkD40f9RLvv0XADsTcfvwQwgs-kJ5VIMh801Mv5JwFhFKTHCsC4_LOMeJOCzwU1p1m9SyGBqCvplLmWemVuQdUBq9MptoXvRyhlGPDDklxFprkKFGoYSeVgH9zIE",
+      avatar_main: "https://lh3.googleusercontent.com/aida-public/AB6AXuBLEJfqNbQ_3qbALBfrfzDyJLZqHrABokfNFLlYStuCvGqF76HFcQeY1gfFmq0CeTdlU5vkH5MigRfe3_8L89bPw8WMVPcvg7DIHnQLzGEWMFGMgWP-5WcXOEKJcbI61Lehj6KWNPI9H_UA9UHaBVuKy2KHwr_JiOUAL0hizd5U6B6IiVL0oA1886bxWxUWXrF2SXWr08uffkU4lYAuV9zJfIwANqrXOFFjUVqvYiKrcg2cNsA1cQyYZpgZbwJQztVwKm3Paqy0nZuj",
+      avatar_1: "https://lh3.googleusercontent.com/aida-public/AB6AXuAZlU5xN7DvKfsBcQWIt-lyQ3jwNMJg2rnI1KcAX-xwW7fH0ZAQoB5wYkOxPT8VuBqaPryrZFYrS7yOLdlScCGPHF_dfJCfPr4bey7CswXvFa2cyna157ry2SDaQg5EZV5z-0Yl6sVH0zM_EbviRmv07kudoEMDa7oUfVzScXcL3U9Ah1ck4yaMr_vPA5En6KBbYc7ALxcWTLqdX7Fp9n52Ty2Q4bVFqe4h09BMqidNeQXLUPQEGwnawoPR0IlO1VSnFX4bgOTZKNSh",
+      avatar_2: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPg2dC_Z8Lypejx35tDIw0gbEAEaGGw3sdzGfS3haW11aD1YpcxajCSKiEC-CiBIox2W4nMVE1OLDAHJpkhfEmbpjBKAvPX17JtykVUkgLJtNWTC7ucztVL9Jp_KYJ5wslL7wJuxLpz_3ludSA20C7skSwJAJRMXz2K5XjOtDD_u29qjQOsPm6aXRGqzERCE3zkoL3Z-gxRagMjTJ12AJyh8G7PXPaFB1GmDNifApmEEMpczpIWhBPIOQfXmRM-R5yfnVPTeQWEJf5",
+      avatar_3: "https://lh3.googleusercontent.com/aida-public/AB6AXuChRv0bdgc1NAoBvy4z9k6lFCPI2_RWra2cVMZIehox-Q0NZWKgemiWYcmk7vacal9Fl5oNYIi8AyCO8kNYdzdLy7-7FWXXIibeJXWMgEk1-iS6hWuc9njcrC9UD-dWASKegB1BL9Le7SBRVvLBZIYCwIs6B1dYkteLN3TBCQwSgxM2W3s4cnNfyB_ZPxkULMdtR-DnJzPkm2tkB-MmJwF1UUNz9Tdq3-ZxZ9SrYbCw8TPd8wmxLwTAAoZdq3Z-xt053M_G66n8lqor",
+      avatar_4: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGx70cR4biglQolutn4H3QY_IR1YYpg-1dSARYOChIEKb7bP-p-EgDFbU1y8n5WCgiJtAb2Hn4om0L5pWBNIhRR4KlgpEFMOlt_GMhQSAPPry3YMbSbRgYCDzAeBAqx6tCbEYpx-_cNs4QA2WPGxh05Kam_zmXqPSf8crzp4PFcYB2rnsxi8ZUWrZqZlvo7FVNLjFryI55TBij2HtLLKv6Pt2RtjcQ91oM8mVx8IAHPfiQGcqpJQrqr1GmANl9_fQFifVeO8Bl1qkx"
+    }
+  },
+  onLaunch() {
+    // Initialize logic
+  }
+})

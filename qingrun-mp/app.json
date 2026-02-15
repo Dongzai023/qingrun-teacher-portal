@@ -1,0 +1,39 @@
+{
+    "pages": [
+        "pages/login/login",
+        "pages/home/home",
+        "pages/stats/stats",
+        "pages/profile/profile",
+        "pages/leave-application/leave-application",
+        "pages/leave-progress/leave-progress"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "清涧中学教师签到系统",
+        "backgroundColor": "#f6f8f7",
+        "backgroundTextStyle": "light",
+        "navigationStyle": "custom"
+    },
+    "tabBar": {
+        "custom": true,
+        "color": "#94a3b8",
+        "selectedColor": "#11d45f",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/stats/stats",
+                "text": "统计"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "text": "个人中心"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

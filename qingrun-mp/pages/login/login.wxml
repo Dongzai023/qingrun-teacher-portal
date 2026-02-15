@@ -1,0 +1,96 @@
+<!-- pages/login/login.wxml -->
+<view class="login-container">
+  <!-- Background Image with blur -->
+  <view class="background-wrapper">
+    <image 
+      src="{{bgCampus}}" 
+      mode="aspectFill"
+      class="bg-image"
+    />
+    <view class="bg-overlay"></view>
+  </view>
+
+  <view class="login-content">
+    <view class="header">
+      <view class="logo-wrapper">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72l5 2.73 5-2.73v3.72z"/>
+        </svg>
+      </view>
+      <view class="title">清涧中学教师签到系统</view>
+      <view class="subtitle">卓越教育 · 清润同行</view>
+    </view>
+
+    <view class="glass-panel login-card">
+      <view class="form-group">
+        <view class="label">工号 / 手机号</view>
+        <view class="input-wrapper">
+          <view class="icon-wrapper">
+            <view class="icon-user"></view>
+          </view>
+          <input 
+            class="login-input" 
+            placeholder="请输入您的工号或手机号" 
+            placeholder-class="placeholder"
+            bindinput="onUsernameChange"
+          />
+        </view>
+      </view>
+
+      <view class="form-group mt-4">
+        <view class="label">密码</view>
+        <view class="input-wrapper">
+          <view class="icon-wrapper">
+            <view class="icon-lock"></view>
+          </view>
+          <input 
+            class="login-input" 
+            password 
+            placeholder="请输入登录密码" 
+            placeholder-class="placeholder"
+            bindinput="onPasswordChange"
+          />
+        </view>
+      </view>
+
+      <view class="links mt-4">
+        <text class="link-primary">注册账号</text>
+        <text class="link-secondary">忘记密码？</text>
+      </view>
+
+      <button class="login-btn mt-8" bindtap="handleLogin">
+        <view class="btn-content">
+          <text>登 录</text>
+          <view class="icon-arrow"></view>
+        </view>
+      </button>
+
+      <view class="divider-wrapper mt-8">
+        <view class="divider"></view>
+        <text class="divider-text">其他方式登录</text>
+      </view>
+
+      <button class="wechat-login-btn mt-6" open-type="getPhoneNumber">
+        <view class="btn-content">
+          <view class="icon-wechat"></view>
+          <text>微信一键登录</text>
+        </view>
+      </button>
+    </view>
+
+    <view class="agreement mt-8">
+      <view class="checkbox-wrapper active">
+        <view class="icon-check"></view>
+      </view>
+      <view class="agreement-text">
+        我已阅读并同意 <text class="highlight">《用户隐私政策》</text> 与 <text class="highlight">《系统使用规范》</text>
+      </view>
+    </view>
+
+    <!-- Footer Info -->
+    <view class="footer-info">
+      <view class="footer-text">清涧中学 陕ICP备2025060483</view>
+      <view class="footer-text">Copyright © 2024-2025 TD.All Rights Reserved.</view>
+    </view>
+  </view>
+</view>

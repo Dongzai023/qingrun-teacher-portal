@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: qingrun-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: qingrun_db
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: .
+    container_name: qingrun-backend
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=mysql+mysqlconnector://root:password@db/qingrun_db
+
+volumes:
+  mysql_data:
