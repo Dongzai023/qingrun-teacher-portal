@@ -23,8 +23,7 @@ for i in range(max_retries):
             admin_user = models.User(
                 username="admin", 
                 password_hash=hashed_pw,
-                full_name="Administrator",
-                role="admin"
+                real_name="Administrator"
             )
             db.add(admin_user)
             db.commit()
