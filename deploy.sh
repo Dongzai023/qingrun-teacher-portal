@@ -22,11 +22,21 @@ git clean -fd
 echo ">>> 正在构建并重启后端 Docker 容器..."
 cd $BACKEND_DIR || { echo "❌ 目录 $BACKEND_DIR 不存在! 部署终止。"; exit 1; }
 
+# 检查并设置可用的 Docker Compose 命令
+if command -v docker-compose &> /dev/null; then
+    DOCKER_CMD="docker-compose"
+elif docker compose version &> /dev/null; then
+    DOCKER_CMD="docker compose"
+else
+    echo "❌ 找不到 docker-compose 或 docker compose 命令，请检查服务器 Docker 环境！"
+    exit 1
+fi
+
 # 停止并移除旧容器 (如果存在)
-docker-compose down
+$DOCKER_CMD down
 
 # 重新构建并以分离模式启动
-docker-compose up -d --build
+$DOCKER_CMD up -d --build
 
 # 4. 检查服务状态
 echo ">>> 检查容器运行状态: qingrun-backend"
