@@ -55,7 +55,3 @@ app.include_router(stats.router)
 @app.get("/")
 def read_root():
     return {"message": "Welcome to Qingjian Teacher Portal API"}
-
-@app.get("/ping")
-def ping():
-    return {"status": "ok", "timestamp": time.time()}
