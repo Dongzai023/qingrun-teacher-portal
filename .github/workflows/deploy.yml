@@ -34,7 +34,7 @@ jobs:
             git reset --hard origin/main
             
             # Create .env file for backend
-            echo "DATABASE_URL=mysql+aiomysql://root:${{ secrets.DB_PASSWORD }}@db/qingrun_db" > qingrun-backend/.env
+            echo "DATABASE_URL=mysql+mysqlconnector://root:${{ secrets.DB_PASSWORD }}@db/qingrun_db" > qingrun-backend/.env
             echo "SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}" >> qingrun-backend/.env
             echo "MYSQL_ROOT_PASSWORD=${{ secrets.DB_PASSWORD }}" >> qingrun-backend/.env
             
