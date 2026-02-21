@@ -1,0 +1,28 @@
+name: Deploy to Tencent Cloud
+
+on:
+  push:
+    branches:
+      - main # 只有当代码推送到 main 分支时才触发
+    paths:
+      - 'qingrun-backend/**' # 只有后端代码发生更改时才触发部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Tencent Cloud via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}     # 腾讯云服务器 IP
+          username: ${{ secrets.SERVER_USER }} # SSH 用户名 (如 root)
+          key: ${{ secrets.SERVER_SSH_KEY }}   # SSH 私钥
+          port: ${{ secrets.SERVER_PORT || 22 }} # 默认 SSH 端口
+          script: |
+            cd /www/wwwroot/qingrun-teacher-portal
+            chmod +x deploy.sh
+            ./deploy.sh
