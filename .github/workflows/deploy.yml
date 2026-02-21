@@ -22,6 +22,11 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}   # SSH 私钥
           port: ${{ secrets.SERVER_PORT || 22 }} # 默认 SSH 端口
           script: |
-            cd /www/wwwroot/qingrun-teacher-portal
+            mkdir -p /www/wwwroot
+            cd /www/wwwroot
+            if [ ! -d "qingrun-teacher-portal" ]; then
+              git clone https://github.com/Dongzai023/qingrun-teacher-portal.git
+            fi
+            cd qingrun-teacher-portal
             chmod +x deploy.sh
             ./deploy.sh
