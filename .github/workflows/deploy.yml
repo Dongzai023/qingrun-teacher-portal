@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main # 只有当代码推送到 main 分支时才触发
-    paths:
-      - 'qingrun-backend/**' # 只有后端代码发生更改时才触发部署
+  workflow_dispatch: # 允许在 GitHub Actions 页面手动点击运行
 
 jobs:
   deploy:
