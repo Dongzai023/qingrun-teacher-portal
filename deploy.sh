@@ -5,7 +5,7 @@ echo "========== 开始部署 Qingjian Teacher Portal =========="
 echo "部署时间: $(date '+%Y-%m-%d %H:%M:%S')"
 
 # 参数配置 (可根据实际情况修改)
-PROJECT_DIR="/www/wwwroot/qingrun-teacher-portal"
+PROJECT_DIR="$HOME/qingrun-teacher-portal"
 BACKEND_DIR="$PROJECT_DIR/qingrun-backend"
 
 # 1. 进入项目目录
